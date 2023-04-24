@@ -53,11 +53,12 @@
 
 <style lang="scss" scoped>
   form {
-    width: 95%;
+    width: 90%;
     border-radius: $border-radius10;
     background: $todo-item-bg;
     margin: $space-base auto 0 auto;
     padding-top: 1rem;
+    @include box-shadow;
     @include placement(flex, column);
   }
   .addtask-form-input {

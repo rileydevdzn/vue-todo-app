@@ -41,6 +41,7 @@
 label {
   margin-left: calc(2 * $space-base);
   z-index: 4;
+  cursor: pointer;
 }
 .todo-item-bg {
   width: 100%;

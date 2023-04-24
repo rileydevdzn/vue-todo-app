@@ -152,7 +152,6 @@
     opacity: 0.3;
   }
   .progress-bar {
-    //width: 25%;
     height: 6px;
     border-radius: 3px;
     background: $header-wht90;
@@ -174,7 +173,10 @@
     min-height: 204px;
     @include placement(flex, column, center, space-between)
   }
-  .home-filter-btns, .home-addtodo-btn {
+  .home-filter-btns {
     width: 100%;
+  }
+  .home-addtodo-btn {
+    width: 90%;
   }
 </style>

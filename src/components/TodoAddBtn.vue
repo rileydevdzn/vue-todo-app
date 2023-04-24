@@ -40,11 +40,12 @@
   .add-btn {
     all: unset;
     display: block;
-    width: 95%;
+    width: 100%;
     height: 54px;
     border-radius: 10px;
     margin: 0 auto;
     background-color: $accent-orange;
+    @include box-shadow;
     font-weight: $font-wt-med;
     color: $primary-wht;
     text-align: center;
