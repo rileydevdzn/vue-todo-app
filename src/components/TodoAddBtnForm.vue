@@ -8,8 +8,7 @@
         name="new-todo"
         autocomplete="off"
         maxLength="25"
-        v-model.lazy.trim="label"
-      />
+        v-model.lazy.trim="label" />
     </div>
     <div class="addtask-form-btn-group">
       <button
@@ -28,6 +27,7 @@
     </div>
   </form>
 </template>
+
 
 <script>
   export default {
@@ -51,6 +51,7 @@
 };
 </script>
 
+
 <style lang="scss" scoped>
   form {
     width: 90%;
@@ -64,10 +65,11 @@
   .addtask-form-input {
     width: inherit;
     padding: 0 calc(1.25 * $space-base);
+    @include placement(flex, column, flex-start, center);
     label {
       font-weight: $font-wt-med;
       font-size: $form-font-sz;
-      margin-left: calc(-0.25 *$space-base);
+      margin-left: calc(-1.75 *$space-base);
     }   
     input {
       width: 100%;
@@ -101,5 +103,4 @@
   .btn.add-task-cancel {
     @include button-colors($mt-button: true);
   }
-  
 </style>

@@ -27,7 +27,9 @@
             :label="item.label"
             :done="item.done"
             :id="item.id"
-            @checkbox-changed="updateDoneStatus(item.id)" >
+            @checkbox-changed="updateDoneStatus(item.id)"
+            @item-edited="editToDo(item.id, $event)"
+            @item-deleted="deleteToDo(item.id)">
         </TodoItem>
       </li>
     </ul>
@@ -37,6 +39,7 @@
     </TodoAddBtn>
   </section>
 </template>
+
 
 <script>
   import FilterBtns from '../components/FilterBtns.vue';
@@ -68,6 +71,14 @@
       updateDoneStatus(toDoId) {
         const toDoToUpdate = this.ToDoItems.find((item) => item.id === toDoId)
         toDoToUpdate.done = !toDoToUpdate.done
+      },
+      editToDo(toDoId, newLabel) {
+        const toDoToEdit = this.ToDoItems.find((item) => item.id === toDoId);
+        toDoToEdit.label = newLabel;
+      },
+      deleteToDo(toDoId) {
+        const itemIndex = this.ToDoItems.findIndex((item) => item.id === toDoId);
+        this.ToDoItems.splice(itemIndex, 1);
       },
     },
     computed: {
@@ -110,6 +121,7 @@
   }
 </script>
 
+
 <style lang="scss" scoped>
   header {
     width: 100%;
@@ -136,7 +148,6 @@
       margin-bottom: calc(1.5 * $space-base);
     }
   }
-
   .progress-tracking {
     width: 100%;
     @include position(relative);

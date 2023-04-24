@@ -13,6 +13,7 @@
     </TodoAddBtnForm>
 </template>
 
+
 <script>
   import TodoAddBtnForm from './TodoAddBtnForm.vue';
   
@@ -36,7 +37,8 @@
   }
 </script>
 
-<style lang="scss">
+
+<style lang="scss" scoped>
   .add-btn {
     all: unset;
     display: block;

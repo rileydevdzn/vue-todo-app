@@ -1,20 +1,30 @@
 <template>
-  <div class="todo-item">
-    <input
-      type="checkbox"
-      :id="id"
-      :checked="isDone"
-      @change="$emit('checkbox-changed')" />
-    <label :for="id">{{label}}</label>
-    <div class="todo-item-bg"></div>
-    <div class="edit-btn-placeholder"></div>
+  <div class="todo-item-wrapper">
+    <div class="todo-item">
+      <input
+        type="checkbox"
+        :id="id"
+        :checked="isDone"
+        @change="$emit('checkbox-changed')" />
+      <label :for="id">{{label}}</label>
+      <div class="todo-item-bg"></div>
+    </div>
+    <TodoEditBtn
+      class="item-edit-todo-btn"
+      @item-edited="$emit('item-edited', $event)"
+      @item-deleted="$emit('item-deleted')">
+    </TodoEditBtn>
   </div>
 </template>
 
+
 <script>
-  
+  import TodoEditBtn from './TodoEditBtn.vue';
 
   export default {
+    components: {
+      TodoEditBtn,
+    },
     props: {
       label: { required: true, type: String },
       done: { default: false, type: Boolean },
@@ -28,18 +38,30 @@
   }
 </script>
 
+
 <style lang="scss">
+.todo-item-wrapper {
+  @include position(relative);
+}
+.item-edit-todo-btn {
+  width: 100%;
+  height: 100%;
+  @include position(absolute, $top: 0, $right: 0);
+  z-index: 3;
+}
 .todo-item {
   width: 90%;
   height: 60px;
   border-radius: $border-radius10;
   margin: 0 auto;
-  
   @include placement(flex, row, center, flex-start);
   @include position(relative);
 }
 label {
-  margin-left: calc(2 * $space-base);
+  width: 70%;
+  height: 100%;
+  padding-left: calc(2 * $space-base);
+  @include placement(flex, row, center, flex-start);
   z-index: 4;
   cursor: pointer;
 }
@@ -61,7 +83,8 @@ input[type="checkbox"] {
   height: calc(1.25 * $space-base);
   border: 1.5px solid $accent-orange;
   border-radius: 50%;
-  margin-left: Calc(1.25 * $space-base);
+  margin-left: calc(1.25 * $space-base);
+  @include position(relative);
   display: grid;
   place-content: center;
   z-index: 4;
@@ -79,6 +102,14 @@ input[type="checkbox"]:checked {
   }
 }
 input[type="checkbox"]::before {
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: $border-radius10;
+  border-bottom-left-radius: $border-radius10;
+  @include position(absolute, $top: calc(-1.25 * $space-base), $left: calc(-1.25 * $space-base));
+}
+input[type="checkbox"]::after {
   content: url(../assets/checkmark-icon.svg);
   width: calc(0.65 * $space-base);
   height: calc(0.65 * $space-base);
@@ -87,9 +118,9 @@ input[type="checkbox"]::before {
   transform: scale(0);
   @include transition(transform, $dur: 0.15s);
   box-shadow: inset 0 0 0 calc(1.25 * $space-base) $primary-dk-blue;
+  
 }
-input[type="checkbox"]:checked::before {
+input[type="checkbox"]:checked::after {
   transform: scale(1.75);
 }
-
 </style>
