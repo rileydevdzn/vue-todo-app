@@ -56,10 +56,8 @@
     data() {
       return {
         ToDoItems: [
-          { id: uniqueId("todo-"), label: "Learn Vue", done: false },
-          { id: uniqueId("todo-"), label: "Create a Vue project", done: true },
-          { id: uniqueId("todo-"), label: "Have fun", done: true },
-          { id: uniqueId("todo-"), label: "Create a to-do list", done: false },
+          { id: uniqueId("todo-"), label: "Get groceries", done: false },
+          { id: uniqueId("todo-"), label: "Water plants", done: false },
         ],
         current: 'all'
       };

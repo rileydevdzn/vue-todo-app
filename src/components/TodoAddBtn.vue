@@ -9,6 +9,7 @@
     </div>
     <TodoAddBtnForm
       v-else
+      @todo-added="itemAdded"
       @add-cancelled="cancelAddToDo">
     </TodoAddBtnForm>
 </template>
@@ -32,8 +33,11 @@
       },
       cancelAddToDo() {
         this.isAdding = false;
-      }
-    }
+      },
+      itemAdded() {
+        this.isAdding = false;
+      },
+    },
   }
 </script>
 

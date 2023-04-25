@@ -51,11 +51,11 @@
     methods: {
       onSubmit() {
         if (this.newLabel && this.newLabel !== this.label) {
-          this.$emit("item-edited", this.newLabel);
+          this.$emit('item-edited', this.newLabel);
         }
       },
       onCancel() {
-        this.$emit("edit-cancelled");
+        this.$emit('edit-cancelled');
       },
       deleteToDo() {
         this.$emit('item-deleted');

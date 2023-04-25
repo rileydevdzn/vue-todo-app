@@ -36,11 +36,11 @@
       if (this.label === "") {
         return;
       }
-      this.$emit("todo-added", this.label);
+      this.$emit('todo-added', this.label);
       this.label = "";
     },
     onCancel() {
-      this.$emit("add-cancelled");
+      this.$emit('add-cancelled');
     },
   },
   data() {
