@@ -1,6 +1,14 @@
 # To-Do App with Vue, Vite and SASS
 
 <div align="center">
+  <img
+    src="./src/assets/Todo-app-overview.svg"
+    alt="To-do app with list of items to complete, one task item marked completed and another left to do"
+    width="285px">
+  <p><em>Mobile-first To-Do App</em></p>
+</div>
+
+<!--<div align="center">
   <picture>
     <source media="(max-width: 1199px)" srcset=".png"/>
     <source media="(min-width: 1200px)" srcset=".png"/>
@@ -10,15 +18,15 @@
     height="350px"
     max-width="100%"/>
   </picture>
-  <p>To-Do App<!--</br><em><small>(if viewing on desktop, resize the browser window to see the mobile version)</small></em>--></p>
-</div>
+  <p>To-Do App</br><em><small>(if viewing on desktop, resize the browser window to see the mobile version)</small></em></p>
+</div>-->
 
 </br>
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [Links](#links)  
+  <!--- [Links](#links)-->  
   - [Highlights](#highlights)
 - [Build details](#build-details)
   - [Features](#features)
@@ -43,11 +51,11 @@ My build needed to fulfill the following:
 
 </br>
 
-### Links
+<!--### Links
 
 View live page: [Vue.js To-Do App]()
 
-</br>
+</br>-->
 
 ### Highlights
 
@@ -56,7 +64,7 @@ View live page: [Vue.js To-Do App]()
 - Add new tasks and update task list
   - [Add new tasks](#add-new-tasks)
 - Edit or delete existing tasks and update task list
-  - [Edit and delete tasks](#edit-or-delete-tasks)
+  - [Edit or delete tasks](#edit-tasks-and-update-task-list)
 - Filter tasks by completion status
   - [Filter tasks](#filter-tasks)
 
@@ -70,52 +78,71 @@ View live page: [Vue.js To-Do App]()
 
 #### *View to-do list and mark tasks as completed*
 
+The home view provides the user with dynamically updating progress trackers in the top header bar, including both numeric and visual indicators to provide a quick progress summary at a glance. 
 
+Next I included filter buttons to allow users to view tasks by completion status (all, completed or active), followed by the list of to-dos with easily accessible buttons to add or edit tasks.
+
+Marking a task as complete provides visual feedback on the task item itself, with a checkmark, strikethrough text and "grayed-out" effect to reduce its visual prominence in the list.
+
+The progress trackers in the header also update whenever a task is added, deleted, or marked complete.
 
 </br>
 
 <div align="center">
   <img
-    src=".gif"
+    src="./src/assets/Todo-app-markcompleted.gif"
     alt="Video demo of marking tasks completed in to-do app"
     width="285px">
-  <p><em>Marking tasks as completed with visual feedback</em></p>
+  <p><em>Marking tasks as completed with visual feedback and updated progress tracking</em></p>
 </div>
 
 </br>
 
 #### *Add new tasks*
 
+A large button with descriptive text allows users to add new tasks to the list. On click, the button is replaced with a form for the user to enter the name of the new task. 
+
+Save and cancel buttons are included with contrasting visuals so the user can save the new task, or back out of the action with the cancel button. Saving the task adds it to the list and automatically updates the user's progress.
+
 <div align="center">
   <img
-    src=".gif"
+    src="./src/assets/Todo-app-addtask.gif"
     alt="Video demo of adding new tasks to to-do list"
     width="285px">
   <p><em>Adding new tasks to the to-do list</em></p>
 </div>
 
-
 </br>
 
-#### *Edit or delete tasks*
+#### *Edit tasks and update task list*
 
+To edit existing tasks, a user can click the edit button (along with icon) available on each task item. A new form opens and from here the user can update the task, save their changes, delete the task, or cancel.
 
-
-
-
-</br>
-
-
-#### *Filter tasks*
+Consistent layout and styling of buttons across the to-do list (buttons below), task items (button with icon at right), and forms (save and cancel) was intentional to make the app easy to learn and use. Icons were also included with the edit and delete buttons as secondary visual indicators for important actions.
 
 <div align="center">
   <img
-    src=".gif"
+    src="./src/assets/Todo-app-edittask.gif"
+    alt="Video demo of editing existing tasks in the to-do list"
+    width="285px">
+  <p><em>Editing tasks and updating the to-do list</em></p>
+</div>
+
+</br>
+
+#### *Filter tasks*
+
+A long list of to-dos can require a lot of scrolling, so I added filter buttons above the to-do list to allow the user to also view tasks by completion status and quickly see what's been accomplished and what tasks are still outstanding.
+
+<div align="center">
+  <img
+    src="./src/assets/Todo-app-filterbtns.gif"
     alt="Video demo of filtering the to-do list"
-    width="100%">
+    width="285px">
   <p><em>Filtering to-dos by completion status</em></p>
 </div>
 
+</br>
 
 ### Challenges
 

@@ -21,7 +21,7 @@ import { RouterLink, RouterView } from 'vue-router'
   .todo-app {
     width: calc(23.4375 * $space-base);
     max-width: 100%;
-    min-height: 623px;
+    min-height: 812px;
     background: $primary-wht;
     margin: calc($space-base) auto;
     padding-bottom: calc(2 * $space-base);

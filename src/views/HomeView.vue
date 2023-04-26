@@ -56,8 +56,8 @@
     data() {
       return {
         ToDoItems: [
-          { id: uniqueId("todo-"), label: "Get groceries", done: false },
           { id: uniqueId("todo-"), label: "Water plants", done: false },
+          { id: uniqueId("todo-"), label: "Get groceries", done: false },
         ],
         current: 'all'
       };
