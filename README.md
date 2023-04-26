@@ -27,7 +27,7 @@
 
 - [Tools]()
 - [Overview](#overview)
-  <!--- [Links](#links)-->  
+  - [Links](#links) 
   - [Highlights](#highlights)
 - [Build details](#build-details)
   - [Features](#features)
@@ -41,7 +41,10 @@
 
 ## Tools
 
-
+- Vue.js
+- Vite
+- ESLint
+- SASS
 
 </br>
 
@@ -58,11 +61,11 @@ My build needed to fulfill the following:
 
 </br>
 
-<!--### Links
+### Links
 
-View live page: [Vue.js To-Do App]()
+View live page: [Vue.js To-Do App](https://rileydevdzn.github.io/vue-todo-app/)
 
-</br>-->
+</br>
 
 ### Highlights
 
