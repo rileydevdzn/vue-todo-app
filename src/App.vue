@@ -1,8 +1,6 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
+import { RouterLink, RouterView } from "vue-router";
 </script>
-
 
 <template>
   <h1 class="sr-only">To Do App</h1>
@@ -12,18 +10,15 @@ import { RouterLink, RouterView } from 'vue-router'
       <RouterView></RouterView>
     </article>
   </main>
-
-  
 </template>
 
-
 <style lang="scss" scoped>
-  .todo-app {
-    width: calc(23.4375 * $space-base);
-    max-width: 100%;
-    min-height: 812px;
-    background: $primary-wht;
-    margin: calc($space-base) auto;
-    padding-bottom: calc(2 * $space-base);
-  }
+.todo-app {
+  width: calc(23.4375 * $space-base);
+  max-width: 100%;
+  min-height: 812px;
+  background: $primary-wht;
+  margin: calc($space-base) auto;
+  padding-bottom: calc(2 * $space-base);
+}
 </style>

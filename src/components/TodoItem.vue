@@ -5,39 +5,39 @@
         type="checkbox"
         :id="id"
         :checked="isDone"
-        @change="$emit('checkbox-changed')" />
-      <label :for="id">{{label}}</label>
+        @change="$emit('checkbox-changed')"
+      />
+      <label :for="id">{{ label }}</label>
       <div class="todo-item-bg"></div>
     </div>
     <TodoEditBtn
       class="item-edit-todo-btn"
       @item-edited="$emit('item-edited', $event)"
-      @item-deleted="$emit('item-deleted')">
+      @item-deleted="$emit('item-deleted')"
+    >
     </TodoEditBtn>
   </div>
 </template>
 
-
 <script>
-  import TodoEditBtn from './TodoEditBtn.vue';
+import TodoEditBtn from "./TodoEditBtn.vue";
 
-  export default {
-    components: {
-      TodoEditBtn,
-    },
-    props: {
-      label: { required: true, type: String },
-      done: { default: false, type: Boolean },
-      id: { required: true, type: String },
-    },
-    data() {
-      return {
-        isDone: this.done,
-      }; 
-    },
-  }
+export default {
+  components: {
+    TodoEditBtn,
+  },
+  props: {
+    label: { required: true, type: String },
+    done: { default: false, type: Boolean },
+    id: { required: true, type: String },
+  },
+  data() {
+    return {
+      isDone: this.done,
+    };
+  },
+};
 </script>
-
 
 <style lang="scss">
 .todo-item-wrapper {
@@ -69,7 +69,13 @@ label {
   width: 100%;
   height: 100%;
   border-radius: $border-radius10;
-  background: linear-gradient(to right, $primary-dk-blue, $primary-dk-blue 18%, $todo-item-bg 18%, $todo-item-bg);
+  background: linear-gradient(
+    to right,
+    $primary-dk-blue,
+    $primary-dk-blue 18%,
+    $todo-item-bg 18%,
+    $todo-item-bg
+  );
   @include box-shadow;
   @include position(absolute, $top: 0, $left: 0);
   z-index: 2;
@@ -107,7 +113,11 @@ input[type="checkbox"]::before {
   height: 60px;
   border-top-left-radius: $border-radius10;
   border-bottom-left-radius: $border-radius10;
-  @include position(absolute, $top: calc(-1.25 * $space-base), $left: calc(-1.25 * $space-base));
+  @include position(
+    absolute,
+    $top: calc(-1.25 * $space-base),
+    $left: calc(-1.25 * $space-base)
+  );
 }
 input[type="checkbox"]::after {
   content: url(../assets/checkmark-icon.svg);
@@ -118,7 +128,6 @@ input[type="checkbox"]::after {
   transform: scale(0);
   @include transition(transform, $dur: 0.15s);
   box-shadow: inset 0 0 0 calc(1.25 * $space-base) $primary-dk-blue;
-  
 }
 input[type="checkbox"]:checked::after {
   transform: scale(1.75);
