@@ -175,9 +175,9 @@ In this first iteration, I focused on the fundamentals of the user experience:
 - what functions does a to-do app need to perform to be useful?
 - how to design a UI that makes accomplishing these functions feel intuitive and easy to complete? 
 
-The result was a simple app that fulfills all of the primary actions a user needs from a to-do app and does them well.
+My solution was an app that is simple, easy to use, and pays attention to performing its primary purpose well. I'm using an iterative design process to incrementally implement new features, concentrating on functionality and ease-of-use (doing a few things and doing them well) over an extended feature list. 
 
-In the next iteration I plan to incorporate additional design elements (like a confirmation modal for deleting tasks) and development work, adding Vue Router for a single-page application (SPA) and state management with Pinia.
+In the next iteration I plan to incorporate additional design elements (like a confirmation modal for deleting tasks) and development work, adding Vue Router for a single-page application (SPA) version and eventually state management with Pinia as the app grows in size and complexity.
 
 </br>
 
