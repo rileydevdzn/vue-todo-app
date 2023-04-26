@@ -35,5 +35,4 @@
       border-bottom: 2px solid $accent-lt-blue;
     }
   }
-  
 </style>

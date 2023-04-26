@@ -25,6 +25,7 @@
 
 ## Table of contents
 
+- [Tools]()
 - [Overview](#overview)
   <!--- [Links](#links)-->  
   - [Highlights](#highlights)
@@ -35,6 +36,12 @@
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+
+</br>
+
+## Tools
+
+
 
 </br>
 
@@ -156,16 +163,56 @@ The dynamically updating visual progress bar was the part of the build I was mos
 
 ### What I learned
 
-#### *Vue events, methods, models and binding*
+#### *Vue events, methods and models*
 
+Ensuring proper flow of data was a big challenge, and I learned a lot about data handling in this project. Across multiple components I needed to create events to fire when data was submitted, add methods to interact with and display that data on submission, control that data using models. 
 
+One of the more challenging details was passing data to a component that was more than a single level above my initial component, like getting the primary app to update with input data from the Add Task form, for example, which was nested inside the Add Task button. To solve this, I used a combination of custom events, the `$emit` method, and event arguments.  
+
+</br>
 
 #### *Vue computed properties and conditional rendering*
 
+For some aspects of my app, like the filter buttons and progress tracking, I didn't want the values to be recalculated on every render, and instead only wanted them to update when one of their dependencies was changed. I used computed properties to accomplish this.
+
+When creating the filter buttons, for example, I combined event listeners and data binding in the filter buttons component with event handlers and computed properties in the parent component to update the view of the to-do list based on item completion. For example, when the user clicks the "completed" filter button, they are shown the filtered list with only completed items. 
+
+```html
+<template>
+  <div class="filter-btn-group">
+    <button @click="updateFilter('all')" :class="{active: current === 'all'}">All</button>
+    <button @click="updateFilter('completed')" :class="{active: current === 'completed'}">Completed</button>
+    <button @click="updateFilter('active')" :class="{active: current === 'active'}">Active</button>
+  </div>
+</template>
+```
+```js
+export default {
+  //...
+  computed: {
+    filterTodos() {
+      if(this.current === 'completed') {
+        return this.ToDoItems.filter((item) => item.done);
+      }
+      if(this.current === 'active') {
+        return this.ToDoItems.filter((item) => !item.done);
+      }
+      return this.ToDoItems;
+    },
+  },
+}
+```
+
+I nested forms within the `Add` and `Edit` buttons using Vue's `v-if` and `v-else` conditional rendering capabilities. In their initial states, the `Add` and `Edit` buttons would be visible, then toggle to the input forms on click. This allowed me to provide editing capabilities for each individual task item and with a straightforward and consistent process for the user across all form inputs.
+
+</br>
 
 
 #### *Global and component styling with SASS*
 
+With my design, I had a number of variables I wanted to be inherited across all of my components, so I created global SASS variables for things like color scheme, fonts, and mixins for specific styles I wanted to reuse. By referencing the global variables when I needed them in components, if I needed to change the design I could make a one change in the `_shared.scss` file and it would quickly and easily propagate through my entire build, updating all of my components at once.
+
+I also made use of the styling available globally through the `<style>` tags and used the `scoped` attribute when I wanted to limit the styling locally to just the current component. Using a combination of all three approaches allowed me to set and update global styles, declare styles once and propagate them throughout my build, and maintain the flexibility to individually style unique portions of components as needed.
 
 </br>
 

@@ -61,7 +61,7 @@ $border-radius10: calc(0.625 * $space-base);
   transition-timing-function: ease;
 }
 
-//Light and dark buttons
+//Empty and filled buttons
 @mixin button-colors($mt-button: true) {
   @if $mt-button {
     background-color: transparent;
@@ -72,27 +72,6 @@ $border-radius10: calc(0.625 * $space-base);
     color: $primary-wht;
     border-bottom-right-radius: $border-radius10;
   }
-  /*@include bp(sprout) {
-    @if $light-button {
-      background-color: transparent;
-      color: $body-txt-color;
-      border: 1px solid $body-txt-color;
-      @include transition(all);
-      &:hover {
-        background-color: $body-txt-color;
-        color: $accent-red;
-      } 
-    } @else {
-      background-color: transparent;
-      border: 1px solid $accent-red;
-      color: $accent-red;
-      @include transition(all);
-      &:hover {
-        background-color: $accent-red;
-        color: $body-txt-color;
-      }
-    }
-  }*/
 }
 
 //Media queries, bp = breakpoint
