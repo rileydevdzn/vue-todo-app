@@ -169,8 +169,6 @@ Ensuring proper flow of data was a big challenge, and I learned a lot about data
 
 One of the more challenging details was passing data to a component that was more than a single level above my initial component, like getting the primary app to update with input data from the Add Task form, for example, which was nested inside the Add Task button. To solve this, I used a combination of custom events, the `$emit` method, and event arguments.  
 
-</br>
-
 #### *Vue computed properties and conditional rendering*
 
 For some aspects of my app, like the filter buttons and progress tracking, I didn't want the values to be recalculated on every render, and instead only wanted them to update when one of their dependencies was changed. I used computed properties to accomplish this.
@@ -204,9 +202,6 @@ export default {
 ```
 
 I nested forms within the `Add` and `Edit` buttons using Vue's `v-if` and `v-else` conditional rendering capabilities. In their initial states, the `Add` and `Edit` buttons would be visible, then toggle to the input forms on click. This allowed me to provide editing capabilities for each individual task item and with a straightforward and consistent process for the user across all form inputs.
-
-</br>
-
 
 #### *Global and component styling with SASS*
 
