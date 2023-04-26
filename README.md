@@ -2,14 +2,6 @@
 
 <div align="center">
   <img
-    src="./src/assets/Todo-app-overview.svg"
-    alt="To-do app with list of items to complete, one task item marked completed and another left to do"
-    width="285px">
-  <p><em>Mobile-first To-Do App</em></p>
-</div>
-
-<div align="center">
-  <img
     src="./src/assets/Todo-app-overview.jpg"
     alt="To-do app with list of items to complete, one task item marked completed and another left to do"
     width="285px">
