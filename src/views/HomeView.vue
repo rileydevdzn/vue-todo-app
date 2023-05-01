@@ -17,6 +17,7 @@
     </div>
   </header>
   <section class="todo-list-section">
+    
     <FilterBtns
       @filterChange="current = $event"
       :current="current"
@@ -189,13 +190,13 @@ h2 {
 
 .todo-list-section {
   width: 100%;
-  min-height: 204px;
-  @include placement(flex, column, center, space-between);
+  @include placement(flex, column, center, flex-start);
 }
 .home-filter-btns {
   width: 100%;
 }
 .home-addtodo-btn {
   width: 90%;
+  margin: $space-base 0;
 }
 </style>
